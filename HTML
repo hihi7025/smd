@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RC League Control Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Pretendard:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at top, #0f2027, #000);
+      color: #e6f1ff;
+      font-family: 'Pretendard', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      padding: 32px;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(16px);
+      border-radius: 24px;
+      box-shadow: 0 0 40px rgba(0,255,255,0.15);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin: 0;
+      color: #5ef2ff;
+    }
+
+    header span {
+      opacity: 0.7;
+      font-size: 14px;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .game-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+      border-radius: 20px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+    }
+
+    .game-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(94,242,255,0.15), transparent);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .game-card:hover::after {
+      opacity: 1;
+    }
+
+    .game-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .game-desc {
+      font-size: 14px;
+      opacity: 0.75;
+      margin-bottom: 20px;
+    }
+
+    .reward {
+      display: flex;
+      gap: 8px;
+    }
+
+    .reward button {
+      flex: 1;
+      padding: 12px;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(94,242,255,0.4);
+      border-radius: 12px;
+      color: #5ef2ff;
+      font-family: 'Orbitron', sans-serif;
+      cursor: pointer;
+      transition: all .25s;
+    }
+
+    .reward button:hover {
+      background: #5ef2ff;
+      color: #000;
+      box-shadow: 0 0 16px rgba(94,242,255,0.8);
+    }
+
+    footer {
+      margin-top: 32px;
+      text-align: right;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 900px) {
+      .game-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>RC LEAGUE</h1>
+      <span>Semiconductor Engineering Club</span>
+    </header>
+
+    <section class="game-grid">
+      <div class="game-card">
+        <div class="game-title">RC CAR BOWLING</div>
+        <div class="game-desc">RC카로 핀을 쓰러뜨려 점수 경쟁</div>
+        <div class="reward">
+          <button contenteditable="true">보상 A</button>
+          <button contenteditable="true">보상 B</button>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <div class="game-title">RC SOCCER</div>
+        <div class="game-desc">RC카로 골을 넣는 팀전 경기</div>
+        <div class="reward">
+          <button contenteditable="true">보상 A</button>
+          <button contenteditable="true">보상 B</button>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <div class="game-title">RC CHALLENGE</div>
+        <div class="game-desc">자유 미션 / 장애물 주행</div>
+        <div class="reward">
+          <button contenteditable="true">보상 A</button>
+          <button contenteditable="true">보상 B</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Live Display Mode · 1920x1080 추천
+    </footer>
+  </div>
+</body>
+</html>
